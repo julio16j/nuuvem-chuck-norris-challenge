@@ -6,7 +6,7 @@ function DetailJoke ({state, joke, closeFunction}) {
     const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
     const [detailedJoke, setDetailedJoke] = useState(null)
     const customModalStyle = {
-        width:'80vmin',
+        maxWidth:'80vmin',
         maxHeight: '80vmin',
         top: '50%',
         left: '50%',
@@ -27,6 +27,7 @@ function DetailJoke ({state, joke, closeFunction}) {
                     <Bars color={primaryColor} height={40} width={40} />
                 </div> 
             ) || (detailedJoke != null && <JokeForm joke={detailedJoke} />)}
+            {(!state.loading) && detailedJoke === null && <div className='text-align-center' >No joke was found, better luck next time</div> }
         </Modal>
     )
 }
