@@ -6,6 +6,7 @@ import './styles.css'
 function ListJokes ({jokes, detailFunction, searchTerm}) {
     return (
         <div className='listContainer' >
+            {jokes.length === 0 && 'No joke was found, please try again '}
             {jokes.map((joke) => {
                 return <div>
                     <main className='jokeBox' onClick={() => detailFunction(joke)}>
