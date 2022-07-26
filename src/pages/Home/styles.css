@@ -1,0 +1,86 @@
+.App {
+    text-align: center;
+  }
+  
+.App-logo {
+    margin-top: 1em;
+    height: 40vmin;
+}
+
+.App-logo:hover {
+    animation-name: twis-dance;
+    animation-duration: 1s;
+    animation-delay: 0;
+    animation-direction: alternate
+}
+
+.App-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: calc(10px + 2vmin);
+    color: var(--orange-white);
+}
+
+@keyframes twis-dance {
+    0%   {}
+    12.5%  {transform: rotate(-5deg);}
+    25%  {transform: rotate(-5deg);}
+    37.5% {transform: rotate(5deg);}
+    50%   {transform: rotate(5deg);}
+    62.5%  {transform: rotate(-5deg);}
+    75%  {transform: rotate(-5deg);}
+    87.5% {transform: rotate(5deg);}
+    100%  {transform: rotate(-5deg);}
+}
+
+.searchField {
+    display: flex;
+    justify-content: center;
+}
+
+.searchField div.input-group {
+    width: 80vmin;
+    border: 1px solid var(--gray);
+    border-radius: 24px;
+}
+
+.searchField div.input-group:hover {
+    background-color: var(--shaded-gray);
+    box-shadow: 0 1px 6px 0 #171717;
+    border-color: rgba(223,225,229,0);
+}
+
+.searchField input {
+    flex: 1;
+    border: none;
+    box-shadow: none;
+    background: none;
+    color: white;
+}
+.searchField input:focus-visible {
+    outline: none;
+}
+
+.searchField div.input-group div.input-group-prepend span {
+    background: none;
+    border: none;
+    color: white;
+}
+
+.searchButton {
+    width: 40%;
+    max-width: 130px;
+    border: none;
+    background-color: var(--shaded-gray);
+    color: var(--orange-white);
+    border-radius: 5px;
+}
+
+.searchButton:hover {
+    border: 1px solid var(--gray)
+}
+
+.searchButton:nth-child(1) {
+    margin-right: 1rem;
+}

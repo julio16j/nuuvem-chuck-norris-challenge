@@ -1,0 +1,43 @@
+:root {
+  --primary-color: #F15A24;
+  --orange-faded:  #FF7F4F;
+  --orange-white:  #FF9D78;
+  --orang-black:  #9E2B00;
+  --orange-shaded: #C73D0A;
+  --gray: #5f6368;
+  --shaded-gray: #303134;
+  --background-main-color: #282c34;
+}
+* {
+  margin: 0;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-main-color) !important;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.mr-1 {
+  margin-right: 5px
+}
+
+.ml-2 {
+  margin-left: 10px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.75) !important;
+}
