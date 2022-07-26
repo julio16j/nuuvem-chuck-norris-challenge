@@ -6,12 +6,15 @@ import ChuckNorrisService from '../../services/ChuckNorrisService'
 import DetailJoke from '../../components/DetailJoke'
 import ListJokes from '../../components/ListJokes';
 import SearchField from '../../components/SearchField';
+import Alert from '../../components/Alert';
 function SearchJokesPage () {
     const [searchTerm, setSearchTerm] = useState('')
     const [highlightTerm, setHighlightTerm] = useState('')
     const [searchedJokes, setSearchedJokes] = useState([])
     const [detailedJoke, setDetailedJoke] = useState(null)
     const [modalState, setModalState] = useState({open: false, loading: false})
+    const [alertMessage, setAlertMessage] = useState('')
+    const [openAlert, setOpenAlert] = useState(false)
     const location = useLocation()
     function detailFunction (joke) {
         setModalState({open: true, loading: true})
@@ -19,6 +22,11 @@ function SearchJokesPage () {
         setModalState({open: true, loading: false})
     }
     async function searchJokes (searchTerm) {
+        if (searchTerm.length < 3) {
+            setAlertMessage('Please type a least 3 characters')
+            setOpenAlert(true)
+            return
+        }
         setHighlightTerm(searchTerm)
         const { data: { result } } = await ChuckNorrisService.getJokesFromSearchTerm(searchTerm)
         setSearchedJokes(result)
@@ -43,6 +51,10 @@ function SearchJokesPage () {
                                 setSearchTerm={setSearchTerm}
                                 searchJokes={searchJokes}
                                 handleFeelingLuckClickButton={handleFeelingLuckClickButton}/>
+                <Alert type='error'
+                    message={alertMessage}
+                    isShow={openAlert}
+                    handleClose={() => setOpenAlert(false)} />
             </header>
             <main>
                 <div>

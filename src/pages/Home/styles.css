@@ -13,15 +13,17 @@
     animation-delay: 0;
     animation-direction: alternate
 }
-
 .App-header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: calc(10px + 2vmin);
     color: var(--orange-white);
 }
-
+.Main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 @keyframes twis-dance {
     0%   {}
     12.5%  {transform: rotate(-5deg);}

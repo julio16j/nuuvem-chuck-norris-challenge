@@ -5,14 +5,22 @@ import React, { useState } from 'react';
 import ChuckNorrisService from '../../services/ChuckNorrisService'
 import DetailJoke from '../../components/DetailJoke'
 import SearchField from '../../components/SearchField'
+import Alert from '../../components/Alert';
 import { useNavigate } from "react-router-dom";
 function HomePage () {
     const [searchTerm, setSearchTerm] = useState('')
+    const [alertMessage, setAlertMessage] = useState('')
+    const [openAlert, setOpenAlert] = useState(false)
     const [detailedJoke, setDetailedJoke] = useState(null)
     const [modalState, setModalState] = useState({open: false, loading: false})
     const navigate = useNavigate()
 
     async function searchJokes (searchTerm) {
+        if (searchTerm.length < 3) {
+            setAlertMessage('Please type a least 3 characters')
+            setOpenAlert(true)
+            return
+        }
         const { data: { result } } = await ChuckNorrisService.getJokesFromSearchTerm(searchTerm)
         navigate('/jokes', {state: {jokes: result, searchTerm}})
     }
@@ -30,11 +38,15 @@ function HomePage () {
                 <img src={logo} className="App-logo" alt="chucknorris_logo" />
                 <p>Type to search the best chuck jokes</p>
             </header>
-            <main>
+            <main className='Main-container'>
                 <SearchField    searchTerm={searchTerm}
                                 setSearchTerm={setSearchTerm}
                                 searchJokes={searchJokes}
                                 handleFeelingLuckClickButton={handleFeelingLuckClickButton}/>
+                <Alert type='error'
+                    message={alertMessage}
+                    isShow={openAlert}
+                    handleClose={() => setOpenAlert(false)} />
             </main>
             <DetailJoke state={modalState} joke={detailedJoke} closeFunction={closeModal}  />
         </div>

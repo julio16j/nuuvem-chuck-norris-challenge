@@ -4,6 +4,7 @@
   --orange-white:  #FF9D78;
   --orang-black:  #9E2B00;
   --orange-shaded: #C73D0A;
+  --negative: #C10015;
   --gray: #5f6368;
   --shaded-gray: #303134;
   --background-main-color: #282c34;
@@ -19,6 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background-main-color) !important;
+  font-size: calc(10px + 1vmin) !important;
 }
 
 code {

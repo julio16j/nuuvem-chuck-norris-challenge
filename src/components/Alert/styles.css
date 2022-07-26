@@ -1,0 +1,32 @@
+.alert {
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+  .error {
+    color: white !important;
+    background-color: var(--negative) !important;
+    border-color: var(--gray) !important;
+  }
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .alert:hover {
+    background-color: var(--shaded-gray) !important;
+    box-shadow: 0 1px 6px 0 #171717;
+    border-color: rgba(223,225,229,0);
+  }
+
+  .hide {
+    display: none;
+  }
