@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/nuuvem-chuck-norris-challenge/precache-manifest.6f7cf7f8e8ac0cca68118f93707ece37.js"
+  "/nuuvem-chuck-norris-challenge/precache-manifest.69aa0429b40022644babbfc4483f40e8.js"
 );
 
 workbox.clientsClaim();
