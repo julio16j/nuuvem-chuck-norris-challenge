@@ -1,7 +1,7 @@
 {
   "main.css": "/nuuvem-chuck-norris-challenge/static/css/main.0afad400.chunk.css",
-  "main.js": "/nuuvem-chuck-norris-challenge/static/js/main.b9f71b0f.chunk.js",
-  "main.js.map": "/nuuvem-chuck-norris-challenge/static/js/main.b9f71b0f.chunk.js.map",
+  "main.js": "/nuuvem-chuck-norris-challenge/static/js/main.7ee56759.chunk.js",
+  "main.js.map": "/nuuvem-chuck-norris-challenge/static/js/main.7ee56759.chunk.js.map",
   "static/js/1.05b503be.chunk.js": "/nuuvem-chuck-norris-challenge/static/js/1.05b503be.chunk.js",
   "static/js/1.05b503be.chunk.js.map": "/nuuvem-chuck-norris-challenge/static/js/1.05b503be.chunk.js.map",
   "static/js/2.497ced0e.chunk.js": "/nuuvem-chuck-norris-challenge/static/js/2.497ced0e.chunk.js",
@@ -11,6 +11,6 @@
   "static/media/chucknorris_logo_coloured.png": "/nuuvem-chuck-norris-challenge/static/media/chucknorris_logo_coloured.39b94c0e.png",
   "static/css/main.0afad400.chunk.css.map": "/nuuvem-chuck-norris-challenge/static/css/main.0afad400.chunk.css.map",
   "index.html": "/nuuvem-chuck-norris-challenge/index.html",
-  "precache-manifest.5aea03480e27d86067b5c02e037f20e5.js": "/nuuvem-chuck-norris-challenge/precache-manifest.5aea03480e27d86067b5c02e037f20e5.js",
+  "precache-manifest.d096239bdc06bf8b3c340857e0a4edfe.js": "/nuuvem-chuck-norris-challenge/precache-manifest.d096239bdc06bf8b3c340857e0a4edfe.js",
   "service-worker.js": "/nuuvem-chuck-norris-challenge/service-worker.js"
 }

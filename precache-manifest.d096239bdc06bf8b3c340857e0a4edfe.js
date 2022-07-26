@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "b9f71b0fa495a97c0e84",
+    "revision": "7ee56759d4913fa11e89",
     "url": "/nuuvem-chuck-norris-challenge/static/css/main.0afad400.chunk.css"
   },
   {
-    "revision": "b9f71b0fa495a97c0e84",
-    "url": "/nuuvem-chuck-norris-challenge/static/js/main.b9f71b0f.chunk.js"
+    "revision": "7ee56759d4913fa11e89",
+    "url": "/nuuvem-chuck-norris-challenge/static/js/main.7ee56759.chunk.js"
   },
   {
     "revision": "05b503beb4d93191790c",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/nuuvem-chuck-norris-challenge/static/media/chucknorris_logo_coloured.39b94c0e.png"
   },
   {
-    "revision": "352d7eeb0ba43e2152e616065be0eac1",
+    "revision": "39301f7643f335f30154857e4202c556",
     "url": "/nuuvem-chuck-norris-challenge/index.html"
   }
 ];
