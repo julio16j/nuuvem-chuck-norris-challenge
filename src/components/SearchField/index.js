@@ -26,8 +26,8 @@ function SearchField ({
                 </div>
             </div>
             <div className='d-flex justify-content-center'>
-                <button className='searchButton' onClick={() => {searchJokes(searchTerm)}} >Pesquisar</button>
-                <button className='searchButton'  onClick={() => {handleFeelingLuckClickButton(searchTerm)}} >I'm feeling luck</button>
+                <button className='searchButton' onClick={() => {searchJokes(searchTerm)}} >Search</button>
+                <button className='searchButton'  onClick={() => {handleFeelingLuckClickButton(searchTerm)}} >I'm feeling lucky</button>
             </div>
         </main>
     )
