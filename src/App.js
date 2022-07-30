@@ -15,6 +15,7 @@ function App() {
       <HashRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/jokes/:searchTerm" element={<SearchJokesPage />} />
           <Route path="/jokes" element={<SearchJokesPage />} />
           <Route path="*" element={<HomePage />} />
         </Routes>

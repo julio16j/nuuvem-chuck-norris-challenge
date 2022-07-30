@@ -1,21 +1,21 @@
 
 import './styles.css'
 import React, { useState, useEffect } from 'react';
-import { useLocation } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import ChuckNorrisService from '../../services/ChuckNorrisService'
 import DetailJoke from '../../components/DetailJoke'
 import ListJokes from '../../components/ListJokes';
 import SearchField from '../../components/SearchField';
 import Alert from '../../components/Alert';
 function SearchJokesPage () {
-    const [searchTerm, setSearchTerm] = useState('')
+    const [newSearchTerm, setNewSearchTerm] = useState('')
     const [highlightTerm, setHighlightTerm] = useState('')
     const [searchedJokes, setSearchedJokes] = useState([])
     const [detailedJoke, setDetailedJoke] = useState(null)
     const [modalState, setModalState] = useState({open: false, loading: false})
     const [alertMessage, setAlertMessage] = useState('')
     const [openAlert, setOpenAlert] = useState(false)
-    const location = useLocation()
+    const { searchTerm } = useParams()
     function detailFunction (joke) {
         setModalState({open: true, loading: true})
         setDetailedJoke(joke)
@@ -40,17 +40,17 @@ function SearchJokesPage () {
         setModalState({...modalState, open: false})
     }
     useEffect(() => {
-        if (location.state) {
-            setSearchedJokes(location.state.jokes || [])
-            setSearchTerm(location.state.searchTerm || '' )
-            setHighlightTerm(location.state.searchTerm || '' )
+        if (searchTerm) {
+            setNewSearchTerm(searchTerm)
+            setHighlightTerm(searchTerm)
+            searchJokes(searchTerm)
         }
-      }, [location.state]);
+      }, [searchTerm]);
     return (
         <div className="App">
             <header className="searchHeader">
-                <SearchField    searchTerm={searchTerm}
-                                setSearchTerm={setSearchTerm}
+                <SearchField    searchTerm={newSearchTerm}
+                                setSearchTerm={setNewSearchTerm}
                                 searchJokes={searchJokes}
                                 handleFeelingLuckClickButton={handleFeelingLuckClickButton}/>
                 <Alert type='error'

@@ -21,8 +21,7 @@ function HomePage () {
             setOpenAlert(true)
             return
         }
-        const { data: { result } } = await ChuckNorrisService.getJokesFromSearchTerm(searchTerm)
-        navigate('/jokes', {state: {jokes: result, searchTerm}})
+        navigate(`/jokes/${searchTerm}`)
     }
     async function handleFeelingLuckClickButton (searchTerm) {
         setModalState({open: true, loading: true})
