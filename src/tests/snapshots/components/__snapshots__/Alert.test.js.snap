@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Component renders correctly 1`] = `
+<div
+  className="hide"
+>
+  Test Message
+  <span
+    className="closebtn"
+  >
+    ×
+  </span>
+</div>
+`;
+
+exports[`Alert Component renders correctly 2`] = `
+<div
+  className=" alert"
+>
+  Test Message
+  <span
+    className="closebtn"
+  >
+    ×
+  </span>
+</div>
+`;
+
+exports[`Alert Component renders correctly 3`] = `
+<div
+  className="error alert"
+>
+  Test Message
+  <span
+    className="closebtn"
+  >
+    ×
+  </span>
+</div>
+`;

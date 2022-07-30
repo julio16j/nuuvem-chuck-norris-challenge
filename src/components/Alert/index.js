@@ -1,14 +1,13 @@
 import React from "react";
 import './styles.css'
-function Alert({ children, type, message, isShow=false, handleClose }) {
-
-  function renderElAlert () {
-    return React.cloneElement(children);
-  };
-
+import typeAlertEnumArray from "../../utils/typeAlertEnum"
+function Alert({ type, message, isShow=false, handleClose }) {
+  if (!typeAlertEnumArray.includes(type)) {
+    type = ""
+  }
   return (
     <div className={!isShow ? 'hide' : `${type} alert`} onClick={handleClose} >
-      {children ? renderElAlert() : message}
+      {message}
       <span className='closebtn'>
         &times;
       </span>

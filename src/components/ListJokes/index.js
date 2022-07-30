@@ -7,8 +7,8 @@ function ListJokes ({jokes, detailFunction, searchTerm}) {
     return (
         <div className='listContainer' >
             {jokes.length === 0 && 'No joke was found, please try again '}
-            {jokes.map((joke) => {
-                return <div>
+            {jokes.map((joke, index) => {
+                return <div key={index}>
                     <main className='jokeBox' onClick={() => detailFunction(joke)}>
                         <section>
                             <p> <FontAwesomeIcon icon={faLaughWink} style={{color: 'var(--orange-white)'}} /> Joke: <HighlighText text={joke.value} regexTerm={searchTerm} /></p>
