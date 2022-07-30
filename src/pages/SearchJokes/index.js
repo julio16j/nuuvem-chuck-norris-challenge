@@ -40,9 +40,11 @@ function SearchJokesPage () {
         setModalState({...modalState, open: false})
     }
     useEffect(() => {
-        setSearchedJokes(location.state.jokes)
-        setSearchTerm(location.state.searchTerm)
-        setHighlightTerm(location.state.searchTerm)
+        if (location.state) {
+            setSearchedJokes(location.state.jokes || [])
+            setSearchTerm(location.state.searchTerm || '' )
+            setHighlightTerm(location.state.searchTerm || '' )
+        }
       }, [location.state]);
     return (
         <div className="App">
