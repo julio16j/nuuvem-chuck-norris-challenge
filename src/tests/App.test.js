@@ -4,7 +4,9 @@ import App from '../App'
 import React from 'react'
 import ChuckNorrisService from '../services/ChuckNorrisService'
 import jokesListFactory from './testUtils/jokesListFactory'
+
 jest.mock('../services/ChuckNorrisService')
+
 test('renders learn react link', () => {
   render(<App />);
   const linkElement = screen.getByText("Search");
