@@ -1,16 +1,18 @@
 import Home from "../../../pages/Home"
-import { render, screen, fireEvent, waitFor} from '@testing-library/react'
+import { render, screen, fireEvent} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from "react"
 import ChuckNorrisService from '../../../services/ChuckNorrisService'
+
 const mockNavigate = jest.fn()
+
 jest.mock('../../../services/ChuckNorrisService')
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
   useNavigate: () => mockNavigate
 }));
 
-describe("Home Page", () => {
+describe("Home Page test cases", () => {
 
   test("if click on search button without text on input will appears and the " +
     "alert and renders correctly", () => {

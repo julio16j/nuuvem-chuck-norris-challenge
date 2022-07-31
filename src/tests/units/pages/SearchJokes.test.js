@@ -4,6 +4,7 @@ import userEvent from '@testing-library/user-event'
 import React from "react";
 import ChuckNorrisService from '../../../services/ChuckNorrisService'
 import jokesListFactory from '../../testUtils/jokesListFactory'
+
 jest.mock('../../../services/ChuckNorrisService')
 
 it("Should SearchJokes Component renders correctly", () => {

@@ -1,9 +1,8 @@
-import renderer from "react-test-renderer"
 import DetailJoke from "../../../components/DetailJoke"
 import React from "react"
-import { render, screen } from '@testing-library/react'
+import { render } from '@testing-library/react'
 
-it("Detail Joke Component when loading renders correctly", () => {
+test("if Detail Joke Component when loading renders correctly", () => {
     const { container } = render(<DetailJoke state={{open: true, loading: true}} closeFunction={() =>{}} />)
   expect(container).toBeInTheDocument()
 })

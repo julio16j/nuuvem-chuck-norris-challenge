@@ -7,18 +7,21 @@ import jokesListFactory from './testUtils/jokesListFactory'
 
 jest.mock('../services/ChuckNorrisService')
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText("Search");
-  expect(linkElement).toBeInTheDocument();
-});
-
-test("if click on search button with text on input will navigate", async () => {
-  ChuckNorrisService.getJokesFromSearchTerm.mockResolvedValueOnce({data: {result: jokesListFactory()}})
-  render(<App />);
-  const input = screen.getByPlaceholderText("Search")
-  fireEvent.change(input, {target: {value: 'test'}})
-  userEvent.click(screen.getByText("Search"))
-  const inputFounded = screen.getByDisplayValue('test')
-  expect(inputFounded).toBeInTheDocument()
-});
+describe("App.js and Navigation should render correctly", () => {
+  
+  test('renders learn react link', () => {
+    render(<App />);
+    const linkElement = screen.getByText("Search");
+    expect(linkElement).toBeInTheDocument();
+  });
+  
+  test("if click on search button with text on input will navigate", async () => {
+    ChuckNorrisService.getJokesFromSearchTerm.mockResolvedValueOnce({data: {result: jokesListFactory()}})
+    render(<App />);
+    const input = screen.getByPlaceholderText("Search")
+    fireEvent.change(input, {target: {value: 'test'}})
+    userEvent.click(screen.getByText("Search"))
+    const inputFounded = screen.getByDisplayValue('test')
+    expect(inputFounded).toBeInTheDocument()
+  });
+})
