@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { Bars } from  'react-loader-spinner'
 import JokeForm from './JokeForm';
 function DetailJoke ({state, joke, closeFunction}) {
-    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
+    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color')
     const [detailedJoke, setDetailedJoke] = useState(null)
     const customModalStyle = {
         maxWidth:'80vmin',

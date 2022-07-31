@@ -1,5 +1,5 @@
 import Home from "../../../pages/Home"
-import { render, screen, fireEvent} from '@testing-library/react'
+import { render, screen, fireEvent, waitFor} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from "react"
 import ChuckNorrisService from '../../../services/ChuckNorrisService'
@@ -41,5 +41,4 @@ describe("Home Page", () => {
     userEvent.click(screen.getByText("I'm feeling lucky"))
     expect(ChuckNorrisService.getRandomJokeFromSearchTerm).toHaveBeenCalled();
   });
-
 })

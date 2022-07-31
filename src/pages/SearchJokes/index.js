@@ -7,7 +7,9 @@ import DetailJoke from '../../components/DetailJoke'
 import ListJokes from '../../components/ListJokes';
 import SearchField from '../../components/SearchField';
 import Alert from '../../components/Alert';
+import { Bars } from  'react-loader-spinner'
 function SearchJokesPage () {
+    const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color');
     const [newSearchTerm, setNewSearchTerm] = useState('')
     const [highlightTerm, setHighlightTerm] = useState('')
     const [searchedJokes, setSearchedJokes] = useState([])
@@ -15,7 +17,9 @@ function SearchJokesPage () {
     const [modalState, setModalState] = useState({open: false, loading: false})
     const [alertMessage, setAlertMessage] = useState('')
     const [openAlert, setOpenAlert] = useState(false)
+    const [loadingRequest, setLoadingRequest] = useState(false)
     const { searchTerm } = useParams()
+
     function detailFunction (joke) {
         setModalState({open: true, loading: true})
         setDetailedJoke(joke)
@@ -28,8 +32,10 @@ function SearchJokesPage () {
             return
         }
         setHighlightTerm(searchTerm)
+        setLoadingRequest(true)
         const { data: { result } } = await ChuckNorrisService.getJokesFromSearchTerm(searchTerm)
         setSearchedJokes(result)
+        setLoadingRequest(false)
     }
     async function handleFeelingLuckClickButton (searchTerm) {
         setModalState({open: true, loading: true})
@@ -60,7 +66,11 @@ function SearchJokesPage () {
             </header>
             <main>
                 <div>
-                    {searchedJokes != null && <ListJokes jokes={searchedJokes} detailFunction={detailFunction} searchTerm={highlightTerm} />}
+                    {(loadingRequest &&
+                    <div className='d-flex justify-content-center align-items-center' style={{marginTop: '2em'}} >
+                        <Bars color={primaryColor} height={60} width={60} />
+                    </div> ) ||
+                    (searchedJokes != null && <ListJokes jokes={searchedJokes} detailFunction={detailFunction} searchTerm={highlightTerm} />)}
                 </div>
                 
             </main>
