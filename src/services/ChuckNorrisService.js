@@ -19,15 +19,16 @@ export function getRandomJoke () {
 
 export async function getRandomJokeFromSearchTerm (searchTerm) {
     if (searchTerm && searchTerm.length > 3) {
-        const { data } = await getJokesFromSearchTerm(searchTerm)
+        const response = await getJokesFromSearchTerm(searchTerm)
+        const data = response.data
         if (data.total <= 0) {
             return null
         } else {
             return data.result[Math.floor(Math.random() * data.result.length)];
         }
     } else {
-        const { data } = await getRandomJoke()
-        return data
+        const response = await getRandomJoke()
+        return response.data
     }
 }
 

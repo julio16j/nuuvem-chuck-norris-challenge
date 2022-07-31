@@ -1,5 +1,5 @@
 import ListJokes from "../../../components/ListJokes"
-import { render, screen, fireEvent} from '@testing-library/react'
+import { render, screen} from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import React from "react"
 import jokesListFactory from '../../testUtils/jokesListFactory'
@@ -14,5 +14,4 @@ describe("ListJokes Component", () => {
     userEvent.click(renderedJokes[0])
     expect(detailMockFunction).toHaveBeenCalled();
   });
-
 })

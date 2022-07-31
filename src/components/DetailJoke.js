@@ -21,11 +21,14 @@ function DetailJoke ({state, joke, closeFunction}) {
         setDetailedJoke(joke)
       }, [joke]);
     return (
-        <Modal isOpen={state.open} onRequestClose={closeFunction} style={{content:customModalStyle}} > {
+        <Modal isOpen={state.open}
+            onRequestClose={closeFunction}
+            style={{content:customModalStyle}}
+            ariaHideApp={false} > {
             (   (state.loading) &&
                 <div className='d-flex justify-content-center align-items-center' style={{height: '100%'}} >
                     <Bars color={primaryColor} height={40} width={40} />
-                </div> 
+                </div>
             ) || (detailedJoke != null && <JokeForm joke={detailedJoke} />)}
             {(!state.loading) && detailedJoke === null && <div className='text-align-center' >No joke was found, better luck next time</div> }
         </Modal>
